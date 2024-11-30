@@ -32,7 +32,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      staleTime: 1000 * 60 * 5,
+      staleTime: 1000 * 1 * 1,
     },
   },
 });
@@ -75,7 +75,7 @@ const router = createBrowserRouter([
           />
         ),
 
-        loader: dashboardLoader(queryClient),
+        loader: dashboardLoader,
         children: [
           {
             index: true,

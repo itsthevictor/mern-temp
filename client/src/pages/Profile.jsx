@@ -10,6 +10,8 @@ const sendData = async (e) => {
   e.preventDefault();
   var data = new FormData(e.currentTarget);
   let formObject = Object.fromEntries(data);
+  console.log(formObject);
+
   const file = formObject.avatar;
   if (file && file.size > 500000) {
     toast.error("file size too  large");

@@ -10,8 +10,6 @@ export const getCurrentUser = async (req, res) => {
   const userWithoutPassword = user.toJSON();
   if (!user) throw new NotFoundError("no user");
   res.status(StatusCodes.OK).json({ user });
-  // console.log(req);
-  // res.status(200).json({ msg: "get current user" });
 };
 
 export const getApplicationStats = async (req, res) => {
@@ -21,8 +19,12 @@ export const getApplicationStats = async (req, res) => {
 };
 
 export const updateUser = async (req, res) => {
+  console.log(req.body);
+
   const newUser = { ...req.body };
   delete newUser.password;
+  console.log(req.file);
+
   if (req.file) {
     const file = formatImage(req.file);
     const response = await cloudinary.v2.uploader.upload(file);

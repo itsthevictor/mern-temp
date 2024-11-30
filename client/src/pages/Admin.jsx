@@ -5,10 +5,10 @@ import Wrapper from "../assets/wrappers/StatsContainer";
 import { toast } from "react-toastify";
 import { StatItem } from "../components";
 
-export const loader = async () => {
+export async function adminLoader() {
   console.log("admin page loader loading");
   return null;
-};
+}
 
 const Admin = () => {
   const [data, setData] = useState({});
